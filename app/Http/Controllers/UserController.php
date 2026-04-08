@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -19,20 +18,34 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+            'role' => 'required'
+        ]);
+
         User::create([
             'username' => $request->username,
             'nis' => $request->nis,
             'kelas' => $request->kelas,
-            'password' => Hash::make($request->password),
+            'password' => $request->password,
             'role' => $request->role,
         ]);
 
-        return back();
+        return back()->with('success', 'User berhasil ditambahkan');
     }
 
     public function destroy($id)
     {
-        User::destroy($id);
+        $user = User::find($id);
+
+        if($user->role == 'admin') {
+            return back()->with('error', 'Tidak bisa menghapus admin');
+        }
+
+        $user->delete();
+
         return back();
     }
 }

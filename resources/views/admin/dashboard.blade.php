@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
 </head>
 <body>
+    
     <div class="container mt-4">
         <h3>Dashboard Admin</h3>
 

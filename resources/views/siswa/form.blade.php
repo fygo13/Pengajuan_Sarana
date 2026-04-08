@@ -9,10 +9,14 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h3>Input Aspirasi</h3>
-
-        <a href="/siswa/histori" class="btn btn-secondary mb-3">Histori</a>
-        <a href="/logout" class="btn btn-danger mb-3">Logout</a>
+        <div class="d-flex justify-content-between">
+            <h3>Input Aspirasi</h3>
+    
+            <div>
+                <a href="/siswa/histori" class="btn btn-secondary mb-3">Histori</a>
+                <a href="/logout" class="btn btn-danger mb-3">Logout</a>
+            </div>
+        </div>
 
         <form action="/siswa/kirim" method="POST">
             @csrf

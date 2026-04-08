@@ -32,6 +32,7 @@ Route::get('/admin/user', [UserController::class, 'index']);
 Route::post('/admin/user', [UserController::class, 'store']);
 Route::get('/admin/user/delete/{id}', [UserController::class, 'destroy']);
 
+Route::post('/admin/kategori', [KategoriController::class, 'index']);
 Route::get('/admin/kategori', [KategoriController::class, 'index']);
-Route::post('/kategori', [KategoriController::class, 'store']);
-Route::get('/kategori/delete/{id}', [KategoriController::class, 'destroy']);
+Route::post('/admin/kategori', [KategoriController::class, 'store']);
+Route::get('/admin/kategori/delete/{id}', [KategoriController::class, 'destroy']);
