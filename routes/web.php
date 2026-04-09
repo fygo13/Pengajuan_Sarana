@@ -27,6 +27,7 @@ Route::get('/siswa/histori', [AspirasiController::class, 'histori']);
 // ADMIN
 Route::get('/admin/dashboard', [AdminController::class, 'index']);
 Route::post('/admin/feedback/{id}', [FeedbackController::class, 'store']);
+Route::get('/admin/aspirasi/delete/{id}', [AdminController::class,'destroy']);
 
 Route::get('/admin/user', [UserController::class, 'index']);
 Route::post('/admin/user', [UserController::class, 'store']);

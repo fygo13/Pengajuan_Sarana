@@ -18,11 +18,18 @@ class AdminController extends Controller
         if($request->kategori) {
             $query->where('kategori_id', $request->kategori);
         }
+        
 
         $data = $query->get();
         $kategori = Kategori::all();
 
         return view('admin.dashboard', compact('data', 'kategori'));
+    }
+
+    public function destroy($id)
+    {
+        Aspirasi::destroy($id);
+        return back()->with('success', 'Aspirasi berhasil dihapus');
     }
 
 }

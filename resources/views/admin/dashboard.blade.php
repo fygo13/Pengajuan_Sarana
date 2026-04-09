@@ -47,6 +47,11 @@
                     </select>
 
                     <button type="submit" class="btn btn-primary">Kirim</button>
+                    <a href="/admin/aspirasi/delete/{{ $d->id }}" 
+                        class="btn btn-danger btn-sm"
+                        onclick="return confirm('Yakin hapus data ini?')">
+                        Hapus
+                    </a>
                 </form>
             </div>
         @endforeach
